@@ -48,24 +48,72 @@ namespace HunterMonster
         private void HeadBreak(object sender, int e)
         {
             Head.OnPartBreak -= HeadBreak;
+            Speed -= Head.Speed;
+
+            Physatk -= Head.Physatk;
+            Wateratk -= Head.Wateratk;
+            Fireatk -= Head.Firedef;
+            Leafatk -= Head.Leafdef;
+            Darkatk -= Head.Darkatk;
+
+            Physdef -= Head.Physdef;
+            Waterdef -= Head.Waterdef;
+            Firedef -= Head.Firedef;
+            Leafdef -= Head.Leafdef;
             UpdateReward(e);
         }
 
         private void ArmBreak(object sender, int e)
         {
             Arms.OnPartBreak -= ArmBreak;
+            Speed -= Arms.Speed;
+
+            Physatk -= Arms.Physatk;
+            Wateratk -= Arms.Wateratk;
+            Fireatk -= Arms.Firedef;
+            Leafatk -= Arms.Leafdef;
+            Darkatk -= Arms.Darkatk;
+
+            Physdef -= Arms.Physdef;
+            Waterdef -= Arms.Waterdef;
+            Firedef -= Arms.Firedef;
+            Leafdef -= Arms.Leafdef;
             UpdateReward(e);
         }
 
         private void BodyBreak(object sender, int e)
         {
             Body.OnPartBreak -= BodyBreak;
+            Speed -= Body.Speed;
+
+            Physatk -= Body.Physatk;
+            Wateratk -= Body.Wateratk;
+            Fireatk -= Body.Firedef;
+            Leafatk -= Body.Leafdef;
+            Darkatk -= Body.Darkatk;
+
+            Physdef -= Body.Physdef;
+            Waterdef -= Body.Waterdef;
+            Firedef -= Body.Firedef;
+            Leafdef -= Body.Leafdef;
             UpdateReward(e);
         }
 
         private void TailBreak(object sender, int e)
         {
             Tail.OnPartBreak -= TailBreak;
+            Speed -= Head.Speed;
+
+            Physatk -= Tail.Physatk;
+            Wateratk -= Tail.Wateratk;
+            Fireatk -= Tail.Firedef;
+            Leafatk -= Tail.Leafdef;
+            Darkatk -= Tail.Darkatk;
+
+            Physdef -= Tail.Physdef;
+            Waterdef -= Tail.Waterdef;
+            Firedef -= Tail.Firedef;
+            Leafdef -= Tail.Leafdef;
             UpdateReward(e);
         }
 
