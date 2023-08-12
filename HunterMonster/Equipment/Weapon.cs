@@ -9,6 +9,8 @@ namespace HunterMonster.Equipment
     internal class Weapon
     {
         public string Name;
+        public int Cost;
+        public int CostType;
         public int id;
         public int Speed;
         public int PhysDamage = 0;

@@ -17,6 +17,7 @@ namespace HunterMonster.Equipment
         public int Armorhp { get; protected set; }
         public int Armoratk { get; protected set; }
         public int ArmoreleAtk { get; protected set; }
+        public int ArmorspeBoost { get; protected set; }
 
         private Helmet _Myhelmet;
         public Helmet helmet 
@@ -47,6 +48,8 @@ namespace HunterMonster.Equipment
             Armorhp = _Myhelmet.HPBonus + _Mychestplate.HPBonus;
             Armoratk = _Myhelmet.AtkBonus + _Mychestplate.AtkBonus;
             ArmoreleAtk = _Myhelmet.EleBonus + _Mychestplate.EleBonus;
+            ArmorspeBoost = _Myhelmet.SpeBonus + _Mychestplate.SpeBonus;
+
             OnArmorChanged?.Invoke();
         }
         public Armor()

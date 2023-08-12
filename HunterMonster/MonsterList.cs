@@ -29,7 +29,7 @@ namespace HunterMonster
                 },
                 Body = new MonsterPart
                 {
-                    Name = "Head",
+                    Name = "Body",
                     HP = 12,
                     Speed = 4,
                     Physatk = 1,
@@ -43,8 +43,46 @@ namespace HunterMonster
                 {
 
                 },
-                
-            }
+
+
+            }, // DinoRaptor
+
+            new Monster
+            {
+                Name = "RaptorSaurus",
+                Reward = 15,
+                Head = new MonsterPart
+                {
+                    Name = "Head",
+                    HP = 12,
+                    Speed = 2,
+                    Physatk = 8,
+                    Bonus = 20,
+                },
+                Arms = new MonsterPart
+                {
+
+                },
+                Body = new MonsterPart
+                {
+                    Name = "Body",
+                    HP = 25,
+                    Speed = 5,
+                    Physatk = 2,
+                    Physdef = 4,
+                    Waterdef = 4,
+                    Firedef = -3,
+                    Bonus = 12,
+                },
+                Tail = new MonsterPart
+                {
+                    Name = "Tail",
+                    HP = 8,
+                    Speed = 1,
+                    Physatk = 2,
+                    Bonus = 10,
+                },
+        } // RaptorSaurus
         };
     }
 }
