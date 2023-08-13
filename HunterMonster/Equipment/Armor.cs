@@ -19,8 +19,8 @@ namespace HunterMonster.Equipment
         public int ArmoreleAtk { get; protected set; }
         public int ArmorspeBoost { get; protected set; }
 
-        private Helmet _Myhelmet;
-        public Helmet helmet 
+        private DefArmor _Myhelmet;
+        public DefArmor helmet 
         { 
             get { return _Myhelmet; }
             set 
@@ -29,8 +29,8 @@ namespace HunterMonster.Equipment
                 Update();
             }
         }
-        private ChestPlate _Mychestplate;
-        public ChestPlate chestPlate
+        private DefArmor _Mychestplate;
+        public DefArmor chestPlate
         {
             get { return _Mychestplate; }
             set

@@ -25,8 +25,6 @@ namespace HunterMonster
 
         public int Spe = 1;
 
-        public int Money { get; set; } = 100;
-
 
 
         private Weapon _MyWeapon = EquipmentListClass.weapons[0];
