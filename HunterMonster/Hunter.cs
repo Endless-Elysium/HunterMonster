@@ -9,6 +9,7 @@ namespace HunterMonster
     internal class Hunter
     {
 
+
         public int HP = 100;
         public int Skill = 1;
 
@@ -26,6 +27,7 @@ namespace HunterMonster
         public int Spe = 1;
 
 
+        public static Hunter Player { get; set; }
 
         private Weapon _MyWeapon = EquipmentListClass.weapons[0];
         public Weapon MyWeapon

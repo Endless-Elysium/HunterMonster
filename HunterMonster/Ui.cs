@@ -9,7 +9,6 @@ namespace HunterMonster
 {
     internal class Ui
     {
-
         public static int IntPlayerInput()
         {
             int Input = -1;
@@ -45,6 +44,17 @@ namespace HunterMonster
             }
             return Input;
         }
+
+        public static void DrawMainMenu()
+        {
+            Console.WriteLine("_____");
+            Console.WriteLine("_____");
+
+            Console.WriteLine("    1 for PlayerInfo");
+            Console.WriteLine("    2 for Hunting");
+            Console.WriteLine("    3 for Forging");
+        }
+
 
         public static void DrawWeaponCraft()
         {

@@ -16,8 +16,8 @@ namespace HunterMonster
             Console.WriteLine("2 for Helmets");
             Console.WriteLine("3 for Chestplates");
             int input = Ui.IntPlayerInput();
-            Console.WriteLine("G for gold");
-            Console.WriteLine("P for monster mats");
+            Console.WriteLine("    G for gold");
+            Console.WriteLine("    P for monster mats");
             if (input == 1)
             {
                 hunter = ForgeWeapon(hunter);
@@ -75,7 +75,7 @@ namespace HunterMonster
         private static Hunter ForgeChestPlate(Hunter hunter)
         {
             int input;
-            Ui.DrawHelmetCraft();
+            Ui.DrawChestPlateCraft();
             input = Ui.IntPlayerInput();
             try
             {

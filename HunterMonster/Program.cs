@@ -6,29 +6,25 @@ namespace HunterMonster
         static void Main(string[] args)
         {
             Hunter Player = new Hunter();
-            Console.WriteLine(Player.MyArmor.helmet.Name);
-            Console.WriteLine(Player.MyArmor.chestPlate.Name);
-            Console.WriteLine(Player.MyWeapon.Name);
-            Console.WriteLine(Player.MyArmor.helmet.Name);
-            Console.WriteLine(Player.MyArmor.chestPlate.Name);
-            Console.WriteLine(Player.MyArmor.helmet.PhysDef);
-            Console.WriteLine(Player.MyArmor.chestPlate.PhysDef);
-            Console.WriteLine(Player.MyArmor.ArmorphysDef);
-            Console.WriteLine(Player.PhysDef);
-            Player = Forge.ForgeEquipment(Player);
-            Console.WriteLine(Player.MyWeapon.Name);
-            Console.WriteLine(Player.MyWeapon.PhysDamage);
-            Console.WriteLine(Player.MyWeapon.Speed);
-            Console.WriteLine(Player.MyArmor.helmet.Name);
-            Console.WriteLine(Player.MyArmor.chestPlate.Name);
-            Console.WriteLine(Player.MyWeapon.Name);
-            Console.WriteLine(Player.MyArmor.helmet.Name);
-            Console.WriteLine(Player.MyArmor.chestPlate.Name);
-            Console.WriteLine(Player.MyArmor.helmet.PhysDef);
-            Console.WriteLine(Player.MyArmor.chestPlate.PhysDef);
-            Console.WriteLine(Player.MyArmor.ArmorphysDef);
-            Console.WriteLine(Player.PhysDef);
 
+            while (true)
+            {
+                Ui.DrawMainMenu();
+                int input = Ui.IntPlayerInput();
+                switch (input)
+                {
+                    case 0:
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+                        Player = Forge.ForgeEquipment(Player);
+                        break;
+                }
+            }
         }
     }
 }
