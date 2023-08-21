@@ -1,11 +1,12 @@
 ﻿using HunterMonster.Equipment;
+using HunterMonster_Combat;
 namespace HunterMonster
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Hunter Player = new Hunter();
+            Hunter MC = new Hunter();
 
             while (true)
             {
@@ -15,13 +16,16 @@ namespace HunterMonster
                 {
                     case 0:
                     case 1:
-
+                        Ui.DrawStats(MC);
                         break;
                     case 2:
-
+                        Ui.DrawMonsterList();
+                        input = Ui.IntPlayerInput();
+                        Hunting.Begin(input,MC);
+                        MC.Update();
                         break;
                     case 3:
-                        Player = Forge.ForgeEquipment(Player);
+                        MC = Forge.ForgeEquipment(MC);
                         break;
                 }
             }

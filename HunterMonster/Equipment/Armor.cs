@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HunterMonster.Equipment
+namespace HunterMonster_Equipment
 {
     delegate void ArmorChange();
     internal class Armor
@@ -54,6 +54,7 @@ namespace HunterMonster.Equipment
         }
         public Armor()
         {
+
             _Myhelmet = EquipmentListClass.Helmets[0];
             _Mychestplate = EquipmentListClass.ChestPlates[0];
             Update();

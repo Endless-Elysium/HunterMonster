@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HunterMonster.Equipment
+namespace HunterMonster_Equipment
 {
     internal class Weapon
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HunterMonster.Equipment
+namespace HunterMonster_Equipment
 {
     internal class DefArmor
     {
@@ -30,7 +30,7 @@ namespace HunterMonster.Equipment
         public int EleBonus { get { return _eleBonus; } init { _eleBonus = value; } }
         public int SpeBonus { get { return _speBonus; } init { _speBonus = value; } }
         public int Cost { get { return _cost; } init { _cost = value; } }
-        public int CostType { get { return _cost; } init { _costType = value; } }
+        public int CostType { get { return _costType; } init { _costType = value; } }
         public int Id { get; init; }
         public string Name { get; init; } = "Test";
 

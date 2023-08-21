@@ -4,21 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HunterMonster
+namespace HunterMonster_Combat
 {
+    delegate void PartAtk();
     internal class MonsterPart
     {
-        public event EventHandler<int> OnPartBreak;
         public int Bonus { get; set; } = 0;
         public string Name { get; set; } = "";
         private int _hp = 0;
-        public int HP { get { return _hp; } set { 
-            HP = value;
-            if (_hp == 0)
-                {
-                    OnPartBreak?.Invoke(this, Bonus);
-                }
-            } }
+        public int HP
+        {
+            get { return _hp; }
+            set
+            {
+                _hp = value;
+            }
+        }
+
         public int Speed { get; set; } = 0;
 
         public int Physatk { get; set; } = 0;

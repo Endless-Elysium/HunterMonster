@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HunterMonster
+namespace HunterMonster_Combat
 {
     internal class MonsterListClass
     {
@@ -14,6 +14,8 @@ namespace HunterMonster
             new Monster
             {
                 Name = "DinoRaptor",
+                HP = 4,
+                RandomDamage = 3,
                 Reward = 10,
                 Head = new MonsterPart
                 {
@@ -22,10 +24,6 @@ namespace HunterMonster
                     Speed = 1,
                     Physatk = 6,
                     Bonus = 15,
-                },
-                Arms = new MonsterPart
-                {
-
                 },
                 Body = new MonsterPart
                 {
@@ -39,10 +37,6 @@ namespace HunterMonster
                     Leafdef = 2,
                     Bonus = 8,
                 },
-                Tail = new MonsterPart
-                {
-
-                },
 
 
             }, // DinoRaptor
@@ -50,18 +44,17 @@ namespace HunterMonster
             new Monster
             {
                 Name = "RaptorSaurus",
+                HP = 8,
+                RandomDamage = 5,
                 Reward = 15,
                 Head = new MonsterPart
                 {
                     Name = "Head",
-                    HP = 12,
+                    HP = 10,
                     Speed = 2,
+                    Wateratk = 12,
                     Physatk = 8,
                     Bonus = 20,
-                },
-                Arms = new MonsterPart
-                {
-
                 },
                 Body = new MonsterPart
                 {
@@ -84,5 +77,6 @@ namespace HunterMonster
                 },
         } // RaptorSaurus
         };
+
     }
 }

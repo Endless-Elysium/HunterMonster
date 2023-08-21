@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HunterMonster.Equipment;
+using HunterMonster_Equipment;
 namespace HunterMonster
 {
     internal class Hunter
@@ -59,7 +59,7 @@ namespace HunterMonster
             MyArmor.OnArmorChanged += Update;
         }
 
-        private void Update()
+        public void Update()
         {
             HP = 100 + _MyArmor.Armorhp;
             PhysDef = _MyArmor.ArmorphysDef;

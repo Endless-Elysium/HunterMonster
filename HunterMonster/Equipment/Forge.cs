@@ -1,15 +1,15 @@
-﻿using HunterMonster.Equipment;
+﻿using HunterMonster_Equipment;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HunterMonster
+namespace HunterMonster.Equipment
 {
     internal class Forge
     {
-       public static Hunter ForgeEquipment(Hunter hunter)
+        public static Hunter ForgeEquipment(Hunter hunter)
         {
             Console.WriteLine("What would you like to forge?");
             Console.WriteLine("1 for Weapons");
@@ -22,13 +22,16 @@ namespace HunterMonster
             {
                 hunter = ForgeWeapon(hunter);
 
-            } else if (input == 2)
+            }
+            else if (input == 2)
             {
                 hunter = ForgeHelmet(hunter);
-            } else if (input == 3)
+            }
+            else if (input == 3)
             {
                 hunter = ForgeChestPlate(hunter);
-            } else
+            }
+            else
             {
                 return hunter;
             }
@@ -39,7 +42,7 @@ namespace HunterMonster
             int input;
             Ui.DrawWeaponCraft();
             input = Ui.IntPlayerInput();
-            if (Points.points[EquipmentListClass.weapons[input - 1].CostType].Amount >= EquipmentListClass.weapons[input - 1].Cost)
+            if (Points.Mats[EquipmentListClass.weapons[input - 1].CostType].Amount >= EquipmentListClass.weapons[input - 1].Cost)
             {
                 hunter.MyWeapon = EquipmentListClass.weapons[input - 1];
             }
@@ -57,7 +60,7 @@ namespace HunterMonster
             input = Ui.IntPlayerInput();
             try
             {
-                if (Points.points[EquipmentListClass.Helmets[input - 1].CostType].Amount >= EquipmentListClass.Helmets[input - 1].Cost)
+                if (Points.Mats[EquipmentListClass.Helmets[input - 1].CostType].Amount >= EquipmentListClass.Helmets[input - 1].Cost)
                 {
                     hunter.MyArmor.helmet = EquipmentListClass.Helmets[input - 1];
                 }
@@ -65,9 +68,10 @@ namespace HunterMonster
                 {
                     Console.WriteLine("Not enough");
                 }
-            } catch (Exception e)
+        }
+            catch (Exception e)
             {
-                Console.WriteLine("Enter a vaild number.");
+                Console.WriteLine("Enter a valid number.");
             }
 
             return hunter;
@@ -79,7 +83,7 @@ namespace HunterMonster
             input = Ui.IntPlayerInput();
             try
             {
-                if (Points.points[EquipmentListClass.ChestPlates[input - 1].CostType].Amount >= EquipmentListClass.ChestPlates[input - 1].Cost)
+                if (Points.Mats[EquipmentListClass.ChestPlates[input - 1].CostType].Amount >= EquipmentListClass.ChestPlates[input - 1].Cost)
                 {
                     hunter.MyArmor.chestPlate = EquipmentListClass.ChestPlates[input - 1];
                 }
@@ -87,7 +91,8 @@ namespace HunterMonster
                 {
                     Console.WriteLine("Not enough");
                 }
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine("Enter a vaild number.");
             }
