@@ -47,7 +47,6 @@ namespace HunterMonster_Combat
                     }
                 }
             }
-            mList = null;
             Unsub();
             if (Player.HP > 0)
             {

@@ -1,4 +1,5 @@
 ﻿using HunterMonster_Combat;
+using HunterMonster;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,12 +15,12 @@ namespace HunterMonster_Combat
 
 
 
+        public MonsterDrops Drops { get; set; }
 
-
-        private MonsterPart _head;
-        private MonsterPart _arms;
-        private MonsterPart _body;
-        private MonsterPart _tail;
+        private MonsterPart _head = new();
+        private MonsterPart _arms = new();
+        private MonsterPart _body = new();
+        private MonsterPart _tail = new();
 
         public MonsterPart? Head
         {
@@ -97,14 +98,6 @@ namespace HunterMonster_Combat
             } 
         }
 
-        public int Reward;
-
-        private void Update()
-        {
-
-        }
-
-
         public void AtkHead(int damage)
         {
             this.HP -= damage;
@@ -133,10 +126,6 @@ namespace HunterMonster_Combat
 
         public Monster()
         {
-            _head = new MonsterPart();
-            _arms = new MonsterPart();
-            _body = new MonsterPart();
-            _tail = new MonsterPart();
         }
 
         private void HeadBreak()
@@ -215,7 +204,9 @@ namespace HunterMonster_Combat
         private void UpdateReward(int e)
         {
             Console.WriteLine("UpdateReward");
-            Reward += e;
+            if (Drops.Reward1 != null) Drops.Reward1.Amount += e;
+            if (Drops.Reward2 != null) Drops.Reward2.Amount += e / 2;
+            if (Drops.Reward3 != null) Drops.Reward3.Amount += e / 2;
         }
     }
 }

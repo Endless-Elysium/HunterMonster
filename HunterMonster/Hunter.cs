@@ -52,10 +52,7 @@ namespace HunterMonster
         }
         public Hunter()
         {
-            if (MyArmor == null)
-            {
-                MyArmor = new Armor();
-            }
+            MyArmor ??= new Armor();
             MyArmor.OnArmorChanged += Update;
         }
 

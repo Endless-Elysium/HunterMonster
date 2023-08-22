@@ -1,4 +1,5 @@
-﻿using HunterMonster_Combat;
+﻿using HunterMonster;
+using HunterMonster_Combat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace HunterMonster_Equipment
     internal class Points
     {
         public int Amount = 0;
-        public string Name;
-
+        public string Name = "None";
+        public int Id { get; set; } = -1;
         
 
-        public static readonly List<Points> Mats = new List<Points>()
+        public static readonly List<Points> Mats = new()
         {
             new Points
             {
@@ -33,24 +34,13 @@ namespace HunterMonster_Equipment
 
         public static void GetReward(Monster m, int Id)
         {
-            MonsterListClass mList = new MonsterListClass();
+            MonsterListClass mList = new();
+            Points.Mats[0].Amount += m.Drops.GoldReward.Amount;
+            if (m.Drops.Reward1 != null) Points.Mats[m.Drops.Reward1.Id].Amount += m.Drops.Reward1.Amount;
+            if (m.Drops.Reward2 != null) Points.Mats[m.Drops.Reward2.Id].Amount += m.Drops.Reward2.Amount;
+            if (m.Drops.Reward3 != null) Points.Mats[m.Drops.Reward3.Id].Amount += m.Drops.Reward3.Amount;
+            Ui.DrawReward(m);
 
-
-            Points.Mats[Id + 1].Amount += m.Reward;
-            Console.WriteLine($"Got {m.Reward}MATS({m.Name}:{Points.Mats[Id + 1].Amount})");
-            Console.WriteLine($"Got {m.Reward * 4}Gold({"Gold"}:{Points.Mats[0].Amount}))");
-            switch (Id)
-            {
-                case 0:
-                    break; 
-                case 1:
-                    Points.Mats[1].Amount += m.Reward * 2;
-                    Console.WriteLine($"Got {m.Reward * 2}MATS({mList.monsters[0].Name}:{Points.Mats[1].Amount})");
-                    break;
-
-                default:
-                    break;
-            }
         }
 
     }

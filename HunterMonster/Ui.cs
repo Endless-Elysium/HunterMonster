@@ -143,18 +143,17 @@ namespace HunterMonster
 
         public static void DrawMonsterList()
         {
-            MonsterListClass list = new MonsterListClass();
+            MonsterListClass list = new();
             Console.WriteLine("-----");
             Console.WriteLine($"{"NUM",7}|{"NAME",16}|{"HP",5}|");
             foreach(Monster m in list.monsters)
             {
                 Console.WriteLine($"{list.monsters.IndexOf(m) + 1,7}|{m.Name,16}|{m.HP,5}|");
             }
-            list = null;
         }
         public static void DrawMonster(Monster m)
         {
-            Console.WriteLine($"Where to attack?",6);
+            Console.WriteLine($"{"Where to attack?",6}");
 
             if (m.Head != null && m.Head.HP > 0 )
             {
@@ -173,6 +172,23 @@ namespace HunterMonster
             if (m.Tail != null && m.Tail.HP > 0)
             {
                 Console.WriteLine($"{"D",4} - {m.Tail.Name}");
+            }
+        }
+
+        public static void DrawReward(Monster m)
+        {
+            Console.WriteLine($"Got {m.Drops.GoldReward.Amount}Gold({"Gold"}:{Points.Mats[m.Drops.GoldReward.Id].Amount}))");
+            if (m.Drops.Reward1 != null)
+            {
+                Console.WriteLine($"Got {m.Drops.Reward1.Amount}MATS({m.Drops.Reward1.Name}:{Points.Mats[m.Drops.Reward1.Id].Amount})");
+            }
+            if (m.Drops.Reward2 != null)
+            {
+                Console.WriteLine($"Got {m.Drops.Reward2.Amount}MATS({m.Drops.Reward2.Name}:{Points.Mats[m.Drops.Reward2.Id].Amount})");
+            }
+            if (m.Drops.Reward3 != null)
+            {
+                Console.WriteLine($"Got {m.Drops.Reward3.Amount}MATS({m.Drops.Reward3.Name}:{Points.Mats[m.Drops.Reward3.Id].Amount})");
             }
         }
     }

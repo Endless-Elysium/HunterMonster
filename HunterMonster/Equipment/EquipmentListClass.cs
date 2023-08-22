@@ -8,7 +8,7 @@ namespace HunterMonster_Equipment
 {
     internal class EquipmentListClass : DefArmor
     {
-        static public List<Weapon> weapons = new List<Weapon>()
+        static public List<Weapon> weapons = new()
         {
             new Weapon() {Name = "Broken Sword", Speed = 2, PhysDamage = 1, DarkDamage = 2, Cost = 100, CostType = 0, Id = 0010},
             new Weapon() {Name = "Iron Sword", Speed = 5, PhysDamage = 5, Cost = 1000, CostType = 0, Id = 1010  },
@@ -17,7 +17,7 @@ namespace HunterMonster_Equipment
             new Weapon() {Name = "LargeRaptorBlade", Speed = 5, PhysDamage = 11, WaterDamage = 4, Cost = 200, CostType = 2, Id = 1040  },
         };
 
-        static public List<DefArmor> Helmets = new List<DefArmor>()
+        static public List<DefArmor> Helmets = new()
         {
             new DefArmor {Name = "Broken Helmet", PhysDef = 1, Cost = 50, CostType = 0, Id = 0010  },
             new DefArmor {Name = "Iron Helm", PhysDef = 3, Cost = 300, CostType = 0, Id = 1010 },
@@ -25,7 +25,7 @@ namespace HunterMonster_Equipment
             new DefArmor {Name = "Dino's Helm", PhysDef = 5, Cost = 150, FireDef = -4, WaterDef = 4, SpeBonus = 3, CostType = 1, Id = 1030  },
             new DefArmor {Name = "Raptor's hat", PhysDef = 4, Cost = 200, FireDef = -5, WaterDef = 3, AtkBonus = 5, SpeBonus = 3, CostType = 2, Id = 1040  },
         };
-        static public List<DefArmor> ChestPlates = new List<DefArmor>()
+        static public List<DefArmor> ChestPlates = new()
         {
             new DefArmor {Name = "Barely armor", PhysDef = 1, Cost = 80, CostType = 0, Id = 0010, },
             new DefArmor {Name = "Iron Chest", PhysDef = 5,  HPBonus = 10, Cost = 500, CostType = 0, Id = 1010 },
