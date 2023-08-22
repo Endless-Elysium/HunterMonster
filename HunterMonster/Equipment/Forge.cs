@@ -1,6 +1,7 @@
 ﻿using HunterMonster_Equipment;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace HunterMonster.Equipment
             int input = Ui.IntPlayerInput();
             Console.WriteLine("    G for gold");
             Console.WriteLine("    P for monster mats");
+            Console.WriteLine("    0 to quit");
             if (input == 1)
             {
                 hunter = ForgeWeapon(hunter);
@@ -42,6 +44,7 @@ namespace HunterMonster.Equipment
             int input;
             Ui.DrawWeaponCraft();
             input = Ui.IntPlayerInput();
+            if (input == 0) return hunter;
             if (Points.Mats[EquipmentListClass.weapons[input - 1].CostType].Amount >= EquipmentListClass.weapons[input - 1].Cost)
             {
                 hunter.MyWeapon = EquipmentListClass.weapons[input - 1];
@@ -58,18 +61,19 @@ namespace HunterMonster.Equipment
             int input;
             Ui.DrawHelmetCraft();
             input = Ui.IntPlayerInput();
+            if (input == 0) return hunter;
             try
             {
                 if (Points.Mats[EquipmentListClass.Helmets[input - 1].CostType].Amount >= EquipmentListClass.Helmets[input - 1].Cost)
                 {
-                    hunter.MyArmor.helmet = EquipmentListClass.Helmets[input - 1];
+                    hunter.MyArmor.Helmet = EquipmentListClass.Helmets[input - 1];
                 }
                 else
                 {
                     Console.WriteLine("Not enough");
                 }
         }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("Enter a valid number.");
             }
@@ -81,21 +85,23 @@ namespace HunterMonster.Equipment
             int input;
             Ui.DrawChestPlateCraft();
             input = Ui.IntPlayerInput();
+            if (input == 0) return hunter;
             try
             {
                 if (Points.Mats[EquipmentListClass.ChestPlates[input - 1].CostType].Amount >= EquipmentListClass.ChestPlates[input - 1].Cost)
                 {
-                    hunter.MyArmor.chestPlate = EquipmentListClass.ChestPlates[input - 1];
+                    hunter.MyArmor.ChestPlate = EquipmentListClass.ChestPlates[input - 1];
                 }
                 else
                 {
                     Console.WriteLine("Not enough");
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("Enter a vaild number.");
             }
+
 
             return hunter;
         }

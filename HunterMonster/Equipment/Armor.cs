@@ -20,7 +20,7 @@ namespace HunterMonster_Equipment
         public int ArmorspeBoost { get; protected set; }
 
         private DefArmor _Myhelmet;
-        public DefArmor helmet 
+        public DefArmor Helmet 
         { 
             get { return _Myhelmet; }
             set 
@@ -30,7 +30,7 @@ namespace HunterMonster_Equipment
             }
         }
         private DefArmor _Mychestplate;
-        public DefArmor chestPlate
+        public DefArmor ChestPlate
         {
             get { return _Mychestplate; }
             set

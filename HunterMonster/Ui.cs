@@ -13,38 +13,32 @@ namespace HunterMonster
     {
         public static int IntPlayerInput()
         {
-            int Input = -1;
-            while (Input == -1)
+            int? Input;
+            try
             {
-                try
-                {
-                    Input = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Enter a number");
-                    return -1;
-                }
-
+                Input = Convert.ToInt32(Console.ReadLine());
+                if (Input.HasValue) return Input.Value;
+            } catch
+            {
+                Console.WriteLine("Invalid Input");
+                return IntPlayerInput();  
             }
-            return Input;
+            Console.WriteLine("Invalid Input");
+            return IntPlayerInput();
+
         }
         public static string StringPlayerInput()
         {
-            string Input = "";
-            while (Input =="")
+            string? Input = Console.ReadLine();
+
+            if (Input != null)
             {
-                try
-                {
-                    Input = Console.ReadLine();
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Enter something");
-                    return "";
-                }
+                return Input.ToUpper();
+            } else
+            {
+                Console.WriteLine("Invalid Input");
+                return StringPlayerInput();
             }
-            return Input.ToUpper();
         }
 
         public static void DrawMainMenu()
@@ -67,8 +61,8 @@ namespace HunterMonster
 
             Console.WriteLine($"{" EQUIPMENT",6}");
             Console.WriteLine($"  Current WEAPON:{h.MyWeapon.Name}");
-            Console.WriteLine($"  Current HELMET:{h.MyArmor.helmet.Name}");
-            Console.WriteLine($"  Current CHESTPLATE:{h.MyArmor.chestPlate.Name}");
+            Console.WriteLine($"  Current HELMET:{h.MyArmor.Helmet.Name}");
+            Console.WriteLine($"  Current CHESTPLATE:{h.MyArmor.ChestPlate.Name}");
 
 
             Console.WriteLine();

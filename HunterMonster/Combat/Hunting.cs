@@ -13,15 +13,16 @@ namespace HunterMonster_Combat
 {
     internal class Hunting
     {
-        private static Monster ?Target;
+        private static Monster Target = new();
 
-        private static Hunter ?Player;
+        private static Hunter Player = new();
 
         public static void Begin(int index, Hunter hunter)
         {
             int Id = index - 1;
-            MonsterListClass mList = new MonsterListClass();
+            MonsterListClass mList = new();
             SetValues(mList.monsters[Id], hunter);
+
             while (Target.HP > 0)
             {
                 Console.WriteLine($"HP: {Player.HP}");
@@ -48,10 +49,11 @@ namespace HunterMonster_Combat
                 }
             }
             Unsub();
+
             if (Player.HP > 0)
             {
                 Console.WriteLine("You win!");
-                Points.GetReward(Target, Id);
+                Points.GetReward(Target);
             } else
             {
                 Console.WriteLine("You lost...");

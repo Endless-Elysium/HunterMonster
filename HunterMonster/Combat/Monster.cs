@@ -12,17 +12,12 @@ namespace HunterMonster_Combat
     internal class Monster : MonsterPart
     {
         public int RandomDamage { get; init; } = 0;
-
-
-
-        public MonsterDrops Drops { get; set; }
-
+        public MonsterDrops Drops { get; set; } = new();
         private MonsterPart _head = new();
         private MonsterPart _arms = new();
         private MonsterPart _body = new();
         private MonsterPart _tail = new();
-
-        public MonsterPart? Head
+        public MonsterPart Head
         {
             get { return _head; }
             set
@@ -41,7 +36,7 @@ namespace HunterMonster_Combat
                 Leafdef += _head.Leafdef;
             }
         }
-        public MonsterPart? Arms 
+        public MonsterPart Arms 
         { 
             get {return _arms; } 
             set 
@@ -60,7 +55,7 @@ namespace HunterMonster_Combat
                 Leafdef += _arms.Leafdef;
             } 
         }
-        public MonsterPart? Body {
+        public MonsterPart Body {
             get {return _body; }
             set 
             {
@@ -78,7 +73,7 @@ namespace HunterMonster_Combat
                 Leafdef += _body.Leafdef;
             } 
         }
-        public MonsterPart? Tail 
+        public MonsterPart Tail 
         { 
             get { return _tail; } 
             set 
@@ -97,14 +92,12 @@ namespace HunterMonster_Combat
                 Leafdef += _tail.Leafdef;
             } 
         }
-
         public void AtkHead(int damage)
         {
             this.HP -= damage;
             _head.HP -= damage;
             if (_head.HP <= 0) HeadBreak(); 
         }
-
         public void AtkArm(int damage)
         {
             this.HP -= damage;
@@ -123,11 +116,6 @@ namespace HunterMonster_Combat
             _tail.HP -= damage;
             if (_tail.HP <= 0) TailBreak();
         }
-
-        public Monster()
-        {
-        }
-
         private void HeadBreak()
         {
             Console.WriteLine($"{_head.Name} broke!");
@@ -145,7 +133,6 @@ namespace HunterMonster_Combat
             Leafdef -= Head.Leafdef;
             UpdateReward(_head.Bonus);
         }
-
         private void ArmBreak()
         {
             Console.WriteLine($"{_arms.Name} broke!");
@@ -163,7 +150,6 @@ namespace HunterMonster_Combat
             Leafdef -= Arms.Leafdef;
             UpdateReward(_arms.Bonus);
         }
-
         private void BodyBreak()
         {
             Console.WriteLine($"{_body.Name} broke!");
@@ -181,7 +167,6 @@ namespace HunterMonster_Combat
             Leafdef -= Body.Leafdef;
             UpdateReward(_body.Bonus);
         }
-
         private void TailBreak()
         {
             Console.WriteLine($"{_tail.Name} broke!");
@@ -199,8 +184,6 @@ namespace HunterMonster_Combat
             Leafdef -= Tail.Leafdef;
             UpdateReward(_tail.Bonus);
         }
-
-
         private void UpdateReward(int e)
         {
             Console.WriteLine("UpdateReward");

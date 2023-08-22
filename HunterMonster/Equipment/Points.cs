@@ -32,9 +32,8 @@ namespace HunterMonster_Equipment
             },
         };
 
-        public static void GetReward(Monster m, int Id)
+        public static void GetReward(Monster m)
         {
-            MonsterListClass mList = new();
             Points.Mats[0].Amount += m.Drops.GoldReward.Amount;
             if (m.Drops.Reward1 != null) Points.Mats[m.Drops.Reward1.Id].Amount += m.Drops.Reward1.Amount;
             if (m.Drops.Reward2 != null) Points.Mats[m.Drops.Reward2.Id].Amount += m.Drops.Reward2.Amount;

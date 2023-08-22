@@ -26,9 +26,6 @@ namespace HunterMonster
 
         public int Spe = 1;
 
-
-        public static Hunter Player { get; set; }
-
         private Weapon _MyWeapon = EquipmentListClass.weapons[0];
         public Weapon MyWeapon
         {
@@ -52,7 +49,8 @@ namespace HunterMonster
         }
         public Hunter()
         {
-            MyArmor ??= new Armor();
+            _MyArmor ??= new Armor();
+            Update();
             MyArmor.OnArmorChanged += Update;
         }
 
