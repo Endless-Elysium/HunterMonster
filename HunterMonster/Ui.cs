@@ -99,12 +99,12 @@ namespace HunterMonster
         {
             int i = 0;
             Console.WriteLine($"{"WEAPONS",11}");
-            Console.WriteLine($"{"NUM",7}|{"NAME",16}|{"COST",9}|{"SPE",3}|{"PHYS",4}|{"WATR",4}|{"FIRE",4}|{"LEAF",4}|{"DARK",4}|");
+            Console.WriteLine($"{"NUM",7}|{"NAME",16}|{"TYPE",9}|{"COST",9}|{"SPE",3}|{"PHYS",4}|{"WATR",4}|{"FIRE",4}|{"LEAF",4}|{"DARK",4}|");
             foreach (Weapon w in EquipmentListClass.weapons)
             {
                 i++;
                 string e = (w.CostType == 0) ? "G" : "P";
-                Console.WriteLine($"{i,7}|{w.Name,16}|{w.Cost,8}{e}|{w.Speed,3}|{w.PhysDamage,4}|{w.WaterDamage,4}|{w.FireDamage,4}|{w.LeafDamage,4}|{w.DarkDamage,4}|");
+                Console.WriteLine($"{i,7}|{w.Name,16}|{w.TypeName,9}|{w.Cost,8}{e}|{w.Speed,3}|{w.PhysDamage,4}|{w.WaterDamage,4}|{w.FireDamage,4}|{w.LeafDamage,4}|{w.DarkDamage,4}|");
             }
         }
         public static void DrawHelmetCraft()
