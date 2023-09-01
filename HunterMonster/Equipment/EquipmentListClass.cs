@@ -10,11 +10,11 @@ namespace HunterMonster_Equipment
     {
         static public List<Weapon> weapons = new()
         {
-            new Weapon() {Name = "Broken Sword", Speed = 2, PhysDamage = 1, DarkDamage = 2, Cost = 100, CostType = 0, Id = 0010},
-            new Weapon() {Name = "Iron Sword", Speed = 5, PhysDamage = 5, Cost = 1000, CostType = 0, Id = 1010  },
-            new Weapon() {Name = "Iron GreatSword", Speed = 3, PhysDamage = 9, Cost = 1700, CostType = 0, Id = 1020  },
-            new Weapon() {Name = "DinoBlade", Speed = 6, PhysDamage = 8, Cost = 100, CostType = 1, Id = 1030  },
-            new Weapon() {Name = "LargeRaptorBlade", Speed = 5, PhysDamage = 11, WaterDamage = 4, Cost = 200, CostType = 2, Id = 1040  },
+            new Weapon() {Name = "Broken Sword", WeaponType = 1, Speed = 2, PhysDamage = 1, DarkDamage = 2, Cost = 100, CostType = 0, Id = 0010},
+            new Weapon() {Name = "Iron Sword", WeaponType = 1, Speed = 5, PhysDamage = 5, Cost = 1000, CostType = 0, Id = 1010  },
+            new Weapon() {Name = "Iron GreatSword", WeaponType = 2, Speed = 3, PhysDamage = 9, Cost = 1700, CostType = 0, Id = 1020  },
+            new Weapon() {Name = "DinoBlade", WeaponType = 1, Speed = 6, PhysDamage = 8, Cost = 100, CostType = 1, Id = 1030  },
+            new Weapon() {Name = "LargeRaptorBlade", WeaponType = 2, Speed = 5, PhysDamage = 11, WaterDamage = 4, Cost = 200, CostType = 2, Id = 1040  },
         };
 
         static public List<DefArmor> Helmets = new()
