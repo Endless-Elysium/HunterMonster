@@ -13,13 +13,13 @@ namespace HunterMonster.Equipment
         public static Hunter ForgeEquipment(Hunter hunter)
         {
             Console.WriteLine("What would you like to forge?");
-            Console.WriteLine("1 for Weapons");
-            Console.WriteLine("2 for Helmets");
-            Console.WriteLine("3 for Chestplates");
+            Console.WriteLine("press 1 for Weapons");
+            Console.WriteLine("press 2 for Helmets");
+            Console.WriteLine("press 3 for Chestplates");
             int input = Ui.IntPlayerInput();
-            Console.WriteLine("    G for gold");
-            Console.WriteLine("    P for monster mats");
-            Console.WriteLine("    0 to quit");
+            Console.WriteLine("    G is for gold");
+            Console.WriteLine("    P is for monster mats");
+            Console.WriteLine("    -press 0 to quit-");
             if (input == 1)
             {
                 hunter = ForgeWeapon(hunter);
@@ -55,7 +55,6 @@ namespace HunterMonster.Equipment
             }
             return hunter;
         }
-
         private static Hunter ForgeHelmet(Hunter hunter)
         {
             int input;
@@ -101,8 +100,6 @@ namespace HunterMonster.Equipment
             {
                 Console.WriteLine("Enter a vaild number.");
             }
-
-
             return hunter;
         }
     }
