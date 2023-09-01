@@ -37,6 +37,10 @@ namespace HunterMonster
 
             }
         }
+
+        public int WeaponType => _MyWeapon.WeaponType;
+
+
         private Armor _MyArmor;
         public Armor MyArmor
         {
