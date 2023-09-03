@@ -118,7 +118,62 @@ namespace HunterMonster_Combat
                     Physatk = 2,
                     Bonus = 14,
                 },
-        } // RaptorSaurus
+        }, // RaptorSaurus
+
+            new Monster
+            {
+
+                // Main
+                Name = "Hazelferna",
+                HP = 18,
+                RandomDamage = 7,
+
+                // Rewards
+                Drops = new MonsterDrops
+                {
+                    GoldReward =
+                    {
+                        Amount = 400,
+                    },
+                    Reward1 = new Points
+                    {
+                        Name = "HazelMat",
+                        Amount = 40,
+                        Id = 1,
+                    },
+                },
+
+                Head = new MonsterPart
+                {
+                    Name = "Face",
+                    HP = 35,
+                    Physatk = 5,
+                    Physdef = 5,
+                    Leafatk = 5,
+                    Leafdef = 10,
+                    Firedef = -5,
+                    Bonus = 18,
+                },
+                Arms = new MonsterPart
+                {
+                    Name = "Vines",
+                    HP = 20,
+                    Physatk = 8,
+                    Leafatk = 10,
+                    Leafdef = 5,
+                    Firedef = -8,
+                    Bonus = 10,
+                },
+                Body = new MonsterPart
+                {
+                    Name = "Base",
+                    HP = 50,
+                    Leafatk = 5,
+                    Leafdef = 10,
+                    Firedef = -10,
+                    Bonus = 20,
+                }
+            },
         };
 
     }

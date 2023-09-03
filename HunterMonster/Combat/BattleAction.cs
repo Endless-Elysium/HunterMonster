@@ -189,6 +189,26 @@ namespace HunterMonster_Combat
             return h.HP;
         }
 
+        public static int FireMonsterATK(Monster m, Hunter h)
+        {
+            int MATK = MATKDEFCAL(m.Fireatk, h.FireDef);
+            Console.WriteLine($"{m.Name} attacked you with FIRE DAMAGE for {MATK} damage!!");
+            h.HP -= MATK;
+
+
+
+            return h.HP;
+        }
+        public static int LeafMonsterATK(Monster m, Hunter h)
+        {
+            int MATK = MATKDEFCAL(m.Leafatk, h.LeafDef);
+            Console.WriteLine($"{m.Name} attacked you with LEAF DAMAGE for {MATK} damage!!");
+            h.HP -= MATK;
+
+
+
+            return h.HP;
+        }
 
 
 

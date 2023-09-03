@@ -30,6 +30,10 @@ namespace HunterMonster_Equipment
             {
                 Name = "SaurusMat",
             },
+            new Points
+            {
+                Name = "HazelMat"
+            },
         };
 
         public static void GetReward(Monster m)

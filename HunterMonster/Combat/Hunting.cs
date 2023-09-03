@@ -77,6 +77,19 @@ namespace HunterMonster_Combat
         {
             Player.HP = BattleAction.WaterMonsterATK(Target, Player);
         }
+
+        private static void FireBasicMonsterATK()
+        {
+            Player.HP = BattleAction.FireMonsterATK(Target, Player);
+        }
+        private static void LeafBasicMonsterATK()
+        {
+            Player.HP = BattleAction.LeafMonsterATK(Target, Player);
+        }
+
+
+
+
         private static void SetValues(Monster monster, Hunter hunter)
         {
             Target = monster;
@@ -84,12 +97,17 @@ namespace HunterMonster_Combat
 
             MonsterBrain.OnBasicATK += BasicMonsterATK;
             MonsterBrain.OnWaterATK += WaterBasicMonsterATK;
+            MonsterBrain.OnFireATK += FireBasicMonsterATK;
+            MonsterBrain.OnLeafATK += LeafBasicMonsterATK;
         }
         
         private static void Unsub()
         {
             MonsterBrain.OnBasicATK -= BasicMonsterATK;
             MonsterBrain.OnWaterATK -= WaterBasicMonsterATK;
+            MonsterBrain.OnFireATK -= FireBasicMonsterATK;
+            MonsterBrain.OnLeafATK -= LeafBasicMonsterATK;
+
         }
 
         
