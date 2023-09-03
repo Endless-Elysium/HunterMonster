@@ -6,10 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HunterMonster.Combat;
 
 namespace HunterMonster_Combat
 {
-    internal class Monster : MonsterPart
+    internal class Monster : MonsterBase
     {
         public int RandomDamage { get; init; } = 0;
         public MonsterDrops Drops { get; set; } = new();
